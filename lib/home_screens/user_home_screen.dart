@@ -20,7 +20,7 @@ class _User_Home_ScreenState extends State<User_Home_Screen> {
 
   getcat() async {
     var res = await crud.getData(home);
-    if (res['status'] == 'success') {
+    if (res != null && res['status'] == 'success') {
       plans.addAll(res['plan']);
     } else {
       print("Error loading data");
